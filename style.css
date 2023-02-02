@@ -18,14 +18,14 @@ body{
     align-items: center;
     font-family: Verdana;
     background: var(--BodyBg);
-    padding: 2em;
+    padding: 2em 0.5em;
 }
 
 .hidden {
     display: none;
 }
 
-.app1, form input, button,
+form input, button,
 .task{
     padding: 1em;
 }
