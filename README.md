@@ -1,5 +1,3 @@
-# todo_app
-
 # Todo_app
 This web application was built using OOP in javascript
 
