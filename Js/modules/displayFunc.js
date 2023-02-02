@@ -9,11 +9,12 @@ const displayFunc = () => {
             if (save_task_func().get_saved_todos()) {
                 save_task_func().get_saved_todos().map((task, indx) => {
                     return html += 
-                    `<div class="task" id='${indx}' onDblclick="editFunc().edit(${indx})">
-                        <div class="content">
-                            <label for='${indx}'>${task.input}</label>
-                        </div>
-                        <i class="fa fa-trash" onClick="displayFunc().delete_single_todo(${indx})"></i>
+                    `<div class="task" id='${indx}'>
+                        <div><p>${task.input}</p></div>
+                        <span>
+                            <i class="fa fa-pencil" onClick="editFunc().edit(${indx})"></i>
+                            <i class="fa fa-trash" onClick="displayFunc().delete_single_todo(${indx})"></i>
+                        </span>
                     </div>`
                 }),
                 elementSelector('.todo-list').innerHTML = html

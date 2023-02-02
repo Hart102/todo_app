@@ -16,35 +16,48 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100%;
     font-family: Verdana;
     background: var(--BodyBg);
+    padding: 2em;
 }
 
 .hidden {
     display: none;
 }
 
-.app, form input, button,
+.app1, form input, button,
 .task{
     padding: 1em;
 }
 
-.task, label, .fa-trash{
+.task, .fa-trash{
     cursor: pointer;
 }
 
 .app{
     width: 400px;
     max-width: 100%;
+    height: 80vh;
     color: var(--LightAsh);
     border-radius: 5px;
     background: var(--DarkBlue);
+    overflow-y: scroll;
 }
+
+::-webkit-scrollbar{
+    width: 1px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background: transparent;
+}
+
 header{
-    padding: 10px;
-    /* border-radius: 5px; */
+    padding: 1em;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: var(--DarkBlue);
     box-shadow: 0px 0px 0px 0.01em var(--LightAsh);
 }
 form{
@@ -55,7 +68,7 @@ form{
 }
 
 form input{
-    width: 400px;
+    width: 90%;
     max-width: 80%;
     border: none;
     outline: none;
@@ -71,37 +84,47 @@ form button{
     height: 50px;
     cursor: pointer;
     background: var(--LightAsh);
+    display: flex;
+    justify-content: center;
 }
 
 /*====Todo List Design====*/
 .todo-list{
+    padding: 2em;
+
+}
+
+.todo-list .task{
     width: 100%;
-    position: relative;
-}
-
-.todo-list .task{
-    width: 94% !important;
-    color: var(--LightAsh) !important;
-    background: var(--LightBlue);
-    border-radius: 5px;
-}
-
-.todo-list .task{
-    width: 450px;
     max-width: 100%;
-    margin: 0.5em 0;
+    margin-top: 0.5em;
+    margin-left: -1.1em;
     font-style: italic;
     text-transform: capitalize;
     font-size: 0.9em;
     display: flex;
+    background: var(--LightBlue);
     justify-content: space-between;
+    flex-direction: row;
+    border-radius: 5px;
 }
 
-.todo-list .task .content{
-    width: 100%;
+.todo-list .task div{
+    display: flex;
+    /* white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+span{
     display: flex;
 }
-
-.todo-list .task label{
-    margin: 0 0.5em;
+.fa{
+    padding: 0.5em;
+    border-radius: 100%;
+}
+span.fa:hover{
+    background: var(--DarkBlue);
+}
+.fa-pencil{
+    margin: 0 18px;
 }
